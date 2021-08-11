@@ -1,0 +1,175 @@
+<template>
+  <Navbar />
+
+  <div class="container w-50" style="color:white;">
+    <h1>{{ contenido.titulo }}</h1>
+
+    <div
+      style="margin-top:2.5rem;"
+      v-for="(content, index) in contenido.subtitulos"
+      :key="contenido.subtitulos[index].id"
+    >
+      <h2 style="margin-top:2rem">{{ contenido.subtitulos[index].titulo }}</h2>
+      <div
+        v-for="(sub, index2) in contenido.subtitulos[index].contenido"
+        :key="index2"
+      >
+        <h4 class="subtitulos" style="margin-top:1.5rem">
+          {{ sub.titulo }}
+        </h4>
+
+        <div
+          class="container mx-1 my-4"
+          v-for="(info, i) in contenido.subtitulos[index].contenido[index2]
+            .contenido"
+          :key="i"
+        >
+          <h5 class="mx-2">{{ info.titulo }}</h5>
+          <h6 class="mx-3">{{ info.contenido }}</h6>
+          <p class="mx-5" style="color:gray" v-if="info.mensaje != null">
+            {{ info.mensaje }}
+          </p>
+        </div>
+
+        <a :href="sub.link" target="_blank" style="margin-left:2rem"
+          ><button v-if="sub.boton" class="btn">
+            {{ sub.boton }}
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</template>
+
+<script>
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  components: {
+    Navbar,
+    Footer,
+  },
+
+  data: function() {
+    return {
+      contenido: {
+        id: 1,
+        titulo: "Informacion Abonados",
+        subtitulos: [
+          {
+            id: 1,
+            titulo: "Gestiona tus servicios",
+            contenido: [
+              {
+                id: 1,
+                titulo: "Nuestras Oficinas y horarios de atencion",
+                contenido: [
+                  {
+                    id: 1,
+                    titulo: "Direccion",
+                    contenido: "Avenida Ernesto Diez Canseco 236 Oficina 403",
+                    mensaje: null,
+                  },
+                  {
+                    id: 2,
+                    titulo: "Horario de Atencion",
+                    contenido:
+                      "De lunes a viernes de 9:00 a 17:30 y sábados de 9:00 a 13:00",
+                    mensaje:
+                      "*Debido a la emergencia sanitaria estamos atendiendo de manera remota desde nuestros hogares.",
+                  },
+                  {
+                    id: 3,
+                    titulo:
+                      "Puede contactarnos a nuestra central telefónica (511) 642-9040",
+                    contenido: null,
+                    mensaje: null,
+                  },
+                ],
+                boton: null,
+                link: "",
+              },
+              {
+                id: 2,
+                titulo: "Mide la velocidad de tu internet",
+                contenido: null,
+                boton: "Mide tu velocidad Aqui",
+                link: "https://www.speedtest.net",
+              },
+              {
+                id: 3,
+                titulo: "Directorio telefónico",
+                contenido: null,
+                boton: "Directorio Telefonico Aqui",
+                link: "https://www.speedtest.net",
+              },
+            ],
+          },
+          {
+            id: 2,
+            titulo: "Contratos y requisitos",
+            contenido: [
+              
+              {
+                id: 1,
+                titulo: "Alta de servicio",
+                contenido: [{
+                    id: 1,
+                    titulo: "Dirección",
+                    contenido: "Avenida Ernesto Diez Canseco 236 Oficina 403",
+                    mensaje: null,
+                  },],
+                boton: "Descargar",
+                link: "/",
+              },
+            ],
+          },
+          {
+            id: 2,
+            titulo: "Atención de reclamos y solicitudes",
+            contenido: [
+              
+              {
+                id: 1,
+                titulo: "Procedimiento para presentar reclamos, recursos y quejas",
+                contenido: [{
+                    id: 1,
+                    titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
+                    contenido: null,
+                    mensaje: null,
+                  },],
+                boton: "Descargar",
+                link: "/",
+              },
+            ],
+          },
+        ],
+      },
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+h1,
+.subtitulos {
+  background: linear-gradient(to right, #f74567, #fe653a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.btn {
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(to right, #f74567, #fe653a);
+  border-radius: rem;
+  border: none;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+</style>
