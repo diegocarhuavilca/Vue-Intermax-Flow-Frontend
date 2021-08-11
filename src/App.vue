@@ -1,9 +1,8 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+
+  <Navbar />
+  <SliderPrincipal/>
+  
 </template>
 
 <style lang="scss">
@@ -28,3 +27,18 @@
   }
 }
 </style>
+
+<script lang="ts">
+import Navbar from './components/Navbar.vue'
+import SliderPrincipal from './components/SliderPrincipal.vue'
+export default {
+  name: 'App',
+  components:{
+    Navbar,
+    SliderPrincipal
+  }
+}
+</script>
+
+
+
