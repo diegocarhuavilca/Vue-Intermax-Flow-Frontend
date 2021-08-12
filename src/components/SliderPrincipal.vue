@@ -1,6 +1,10 @@
 <template>
   <div class="container-fluid p-0 m-0 contenido-slider-principal">
-    <carousel :items-to-show="1" :wrap-around="true" :autoplay="3000">
+    <carousel
+      :items-to-show="1"
+      :wrap-around="true"
+      :autoplay="3000"
+    >
       <slide v-for="slide in slider" :key="slide">
         <div class="container-fluid contenido-slide m-0 p-0">
           <img
@@ -17,7 +21,6 @@
           </a>
         </div>
       </slide>
-
     </carousel>
     <div class="container-fluid curva m-0 p-0">
       <img
@@ -72,6 +75,7 @@ export default {
     Carousel,
     Slide,
   },
+  
   data: function() {
     return {
       slider: [

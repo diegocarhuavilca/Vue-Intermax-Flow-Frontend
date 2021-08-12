@@ -9,7 +9,7 @@
       <div class="row my-4 contenido-footer">
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <div
-            class="shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+            class="shadow-1-strong d-flex align-items-center justify-content-center mx-auto"
             style="width: 150px; height: 150px;"
           >
             <a href="/"
@@ -25,12 +25,12 @@
 
           <ul class="list-unstyled d-flex flex-row justify-content-center">
             <li>
-              <a class="text-white px-2" href="#!">
+              <a class="text-white px-2 hvr-float-shadow"  href="https://www.facebook.com/flow.fibra">
                 <i class="fab fa-facebook-square fa-2x"></i>
               </a>
             </li>
             <li>
-              <a class="text-white px-2" href="#!">
+              <a class="text-white px-2 hvr-float-shadow" href="https://www.instagram.com/fibra.flow/">
                 <i class="fab fa-instagram fa-2x"></i>
               </a>
             </li>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Contacto</h5>
+          <h5 class="text-uppercase mb-4" style="color:#f74567">Contacto</h5>
 
           <ul class="list-unstyled">
             <li>
@@ -59,11 +59,11 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Legal y Regulatorio</h5>
+          <h5 class="text-uppercase mb-4" style="color:#f74567">Legal y Regulatorio</h5>
 
           <ul class="list-unstyled p-0">
-            <li v-for="legal in legales" :key="legal.id" class="mb-2">
-              <a href="#!" class="text-white" style="text-decoration:none">{{
+            <li v-for="legal in legales" :key="legal.id" class="mb-2 hvr-forward" style="display:inline-block; width:100%">
+              <a :href="legal.link" class="text-white" style="text-decoration:none" target="_blank">{{
                 legal.titulo
               }}</a>
             </li>
@@ -97,37 +97,37 @@ export default {
         {
           id: 1,
           titulo: "Información de Abonados y Usuarios",
-          link: "",
+          link: "/informacion-abonados",
         },
         {
           id: 2,
           titulo: "Portabilidad Numérica",
-          link: "",
+          link: "/portabilidad-numerica",
         },
         {
           id: 3,
           titulo: "Indicadores de Calidad",
-          link: "",
+          link: "/indicadores-de-calidad",
         },
         {
           id: 4,
           titulo: "Uso de la Red en caso de Emergencia",
-          link: "",
+          link: "/red-casos-de-emergencia",
         },
         {
           id: 5,
           titulo: "Neutralidad de la Red",
-          link: "",
+          link: "/neutralidad-de-red",
         },
         {
           id: 6,
           titulo: "Ley de Protección de Datos",
-          link: "",
+          link: "/proteccion-datos",
         },
         {
           id: 7,
           titulo: "Terminos y Condiciones",
-          link: "",
+          link: "/terminos-y-condiciones",
         },
         {
           id: 8,

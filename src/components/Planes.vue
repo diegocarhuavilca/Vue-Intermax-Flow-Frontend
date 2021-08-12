@@ -25,10 +25,12 @@
     style="background-image:url('https://res.cloudinary.com/intermax/image/upload/v1622653039/Flow/Planes/MicrosoftTeams-image_40_goqorz.png');"
   >
     <carousel
-      :items-to-show="3"
       :wrap-around="true"
       :mouse-drag="false"
-      class="container wow slideInLeft" data-wow-offset="10"
+      :settings="settings"
+      :breakpoints="breakpoints"
+      class="container wow slideInLeft"
+      data-wow-offset="10"
     >
       <slide v-for="plan in planes" :key="plan.id" class="container hvr-grow">
         <div class="container-fluid py-5">
@@ -43,7 +45,7 @@
       </slide>
 
       <template #addons>
-        <navigation />
+        <pagination />
       </template>
     </carousel>
   </div>
@@ -70,6 +72,57 @@
   </svg>
 </template>
 
+<script>
+import "vue3-carousel/dist/carousel.css";
+import { defineComponent } from "vue";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+export default defineComponent({
+  name: "Basic",
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+  },
+  setup() {
+    return {
+      settings: {
+        itemsToShow: 1,
+      },
+      breakpoints: {
+        500: {
+          itemsToShow: 2,
+        },
+        // 1024 and up
+        1200: {
+          itemsToShow: 3,
+        },
+      },
+    };
+  },
+  data: function() {
+    return {
+      planes: [
+        {
+          id: 1,
+          velocidad: "Fibra 50 MB",
+          precio: "99",
+        },
+        {
+          id: 2,
+          velocidad: "Fibra 100 MB",
+          precio: "129",
+        },
+        {
+          id: 3,
+          velocidad: "Fibra 150 MB",
+          precio: "159",
+        },
+      ],
+    };
+  },
+});
+</script>
+
 <style lang="scss" scoped>
 .contenido-planes {
   background-position: center center;
@@ -78,6 +131,7 @@
 }
 .contenido-slide {
   background-color: #0b1016;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 0.5rem solid #1c2434;
@@ -134,38 +188,6 @@
 .st9 {
   fill: transparent;
 }
-</style>
 
-<script>
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide } from "vue3-carousel";
-export default {
-  name: "Slider Principal",
-  components: {
-    Carousel,
-    Slide,
-    //Navigation,
-  },
-  data: function() {
-    return {
-      planes: [
-        {
-          id: 1,
-          velocidad: "Fibra 50 MB",
-          precio: "99",
-        },
-        {
-          id: 2,
-          velocidad: "Fibra 100 MB",
-          precio: "129",
-        },
-        {
-          id: 3,
-          velocidad: "Fibra 150 MB",
-          precio: "159",
-        },
-      ],
-    };
-  },
-};
-</script>
+
+</style>

@@ -23,7 +23,7 @@
   <div class="container-fluid contenido-contacto" style="background-color:#16202b;">
     <div class="container col-xxl-8 px-4 py-5">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
+        <div class="col-10 col-sm-8 col-lg-6 imagen">
           <img
             :src="contacto.imagen"
             class="d-block mx-lg-auto img-fluid"
@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .st30 {
   fill: rgb(29, 41, 58);
 }
@@ -104,5 +104,15 @@ export default {
   background-image: url('https://res.cloudinary.com/intermax/image/upload/v1622219592/Flow/Contacto/MicrosoftTeams-image_11_lrs0ko.png');
   background-size: cover;
   background-position: 0 50%;
+}
+
+@media screen and (max-width: 990px) {
+  .imagen{
+    display: none;
+  }
+
+  .contenido-contacto{
+    background-repeat: repeat-x repeat-y;
+  }
 }
 </style>

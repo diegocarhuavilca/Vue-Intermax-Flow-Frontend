@@ -7,8 +7,8 @@
       <a class="navbar-brand" href="/"
         ><img
           src="https://res.cloudinary.com/intermax/image/upload/v1621264964/Flow/Brande/Logo_w2mccx.svg"
-          width="150"
           alt=""
+          width="100"
       /></a>
       <button
         class="navbar-toggler"
@@ -35,7 +35,7 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item hvr-float">
+          <li class="nav-item hvr-float-shadow">
             <a
               class="nav-link"
               href="https://www.facebook.com/flow.fibra"
@@ -43,7 +43,7 @@
               ><i class="fab fa-facebook-square fa-2x" style="color:white"></i
             ></a>
           </li>
-          <li class="nav-item hvr-float">
+          <li class="nav-item hvr-float-shadow">
             <a
               class="nav-link"
               href="https://www.instagram.com/fibra.flow/"
@@ -70,13 +70,15 @@ export default defineComponent({
 .header {
   background-image: linear-gradient(
     to right,
-    rgba(11, 16, 22, 0.6),
-    rgba(29, 41, 58, 0.6)
+    rgba(11, 16, 22, 0.8),
+    rgba(29, 41, 58, 0.8)
   );
 }
 
 .item {
   font-size: 1.2rem;
+  display:inline-block;
+  width: fit-content;
 
   a {
     transition: 0.3s ease-in-out;

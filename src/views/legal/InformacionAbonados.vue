@@ -1,7 +1,7 @@
 <template>
   <Navbar />
 
-  <div class="container w-50" style="color:white;">
+  <div class="container w-50" style="color:white; margin-top:5rem;margin-bottom:10rem;">
     <h1>{{ contenido.titulo }}</h1>
 
     <div
@@ -39,7 +39,27 @@
       </div>
     </div>
   </div>
+ <svg
+    version="1.1"
+    id="Capa_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 1240 120"
+    style="enable-background: new 0 0 1240 120"
+    xml:space="preserve"
+  >
+    <path
+      class="st3"
+      d="M-5.24,114.75c393.1-208.54,855.91,98.49,1250.49-98.81v-25.4L-5.24-7.43V114.75z"
+    ></path>
 
+    <path
+      class="st4"
+      d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
+    ></path>
+  </svg>
   <Footer />
 </template>
 
@@ -127,13 +147,25 @@ export default {
             ],
           },
           {
-            id: 2,
+            id: 3,
             titulo: "Atención de reclamos y solicitudes",
             contenido: [
               
               {
                 id: 1,
                 titulo: "Procedimiento para presentar reclamos, recursos y quejas",
+                contenido: [{
+                    id: 1,
+                    titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
+                    contenido: null,
+                    mensaje: null,
+                  },],
+                boton: "Descargar",
+                link: "/",
+              },
+              {
+                id: 2,
+                titulo: "Expedientes de reclamos en primera instancia",
                 contenido: [{
                     id: 1,
                     titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
@@ -171,5 +203,12 @@ h1,
   &:hover {
     color: white;
   }
+}
+.st3 {
+  fill: transparent;
+}
+
+.st4 {
+  fill: #1b2638;
 }
 </style>

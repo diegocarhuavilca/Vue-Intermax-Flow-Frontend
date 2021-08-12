@@ -37,6 +37,14 @@ select:focus {
   box-shadow: 0 1px 1px #fe653a inset, 0 0 8px #fe653a;
   outline: 0 none;
 }
+
+.carousel__pagination-button {
+  background-color:#fe643a94 !important ;
+}
+
+.carousel__pagination-button--active{
+  background-color:#ff3801 !important ;
+}
 </style>
 
 <script lang="ts">
