@@ -88,7 +88,7 @@ export default {
           id: 2,
           imagen:
             "https://res.cloudinary.com/intermax/image/upload/v1623421544/Flow/Informacion/MicrosoftTeams-image_16_osr7sp-_1__1_lakz2p.webp",
-          titulo: "Velocidad Garantizada y Simétrica",
+          titulo: "Velocidad",
           contenido:
             "Disfruta de la máxima velocidad en fibra óptica y siempre con el mejor precio posible. Olvídate de quedarte sin internet, navega, comparte, juega online, mira tus videos sin interrupciones.",
         },
