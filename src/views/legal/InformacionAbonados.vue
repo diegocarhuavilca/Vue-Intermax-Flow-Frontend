@@ -103,7 +103,7 @@ export default {
                   {
                     id: 3,
                     titulo:
-                      "Puede contactarnos a nuestra central telefónica (511) 642-9040",
+                      "Puede contactarnos a nuestra central telefónica 740-1740",
                     contenido: null,
                     mensaje: null,
                   },

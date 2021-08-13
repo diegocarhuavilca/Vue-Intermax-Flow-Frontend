@@ -17,7 +17,7 @@
         {{ contenido.subtitulos[index].subtitulo }}
       </h5>
       <p style="text-align:justify;">
-        INTERMAX S.A.C. (en adelante “INTERMAX”) es una empresa privada que
+        INTERMAX S.A.C. (en adelante "FLOW") es una empresa privada que
         brinda servicios de telecomunicaciones en el Perú. En ese sentido,
         reconoce que la seguridad de la información de sus clientes y prospectos
         de clientes merece interés y cuidado conforme a lo establecido en la Ley
@@ -26,19 +26,19 @@
         , su Reglamento y normas complementarias, adoptando para ello las
         medidas técnicas y organizativas necesarias para evitar el mal uso,
         alteración, robo, acceso no autorizado de datos personales. Asimismo,
-        INTERMAX recopila información personal, tales como: nombres completos,
+        FLOW recopila información personal, tales como: nombres completos,
         correos electrónicos, documentos de identidad; entre otros, que resulten
         necesarios para cumplir con los fines comerciales de la empresa. Esta
         recopilación puede llevarse a cabo a través de diversas plataformas. Sin
         embargo, los datos serán recopilados solo si el USUARIO autoriza el
         tratamiento de los datos personales (expresión de voluntad), mediante la
         aceptación automatizada y no automatizada. Por lo tanto, los datos
-        personales suministrados a INTERMAX serán almacenados en nuestra base de
+        personales suministrados a FLOW serán almacenados en nuestra base de
         datos de “Clientes” por tiempo indefinido y serán tratados de acuerdo
         con lo establecido en la ley y el contrato entre las partes,
         principalmente para fines administrativos, promocionales, publicitarios,
         comerciales, de contacto y otras finalidades comerciales directa o
-        indirectamente relacionadas con la actividad comercial de INTERMAX. En
+        indirectamente relacionadas con la actividad comercial de FLOW. En
         algunos casos, sus datos serán transferidos a empresas del grupo o
         terceros no vinculados siempre dentro de los fines para los cuales se
         autorizó el tratamiento. Como encargado del tratamiento, garantizamos
@@ -92,7 +92,7 @@ export default {
         subtitulos: [
           {
             id: 1,
-            titulo: "POLÍTICA DE PROTECCIÓN DE DATOS Y PRIVACIDAD DE INTERMAX",
+            titulo: "POLÍTICA DE PROTECCIÓN DE DATOS Y PRIVACIDAD DE FLOW",
             contenido: "",
             subtitulo:
               "LEY N° 29733, Ley de Protección de Datos y su Reglamento DS. N° 003-2013-JUS",
