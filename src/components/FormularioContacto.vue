@@ -105,7 +105,7 @@
       </select>
     </div>
 
-    <input type="submit" value="Enviar" class="btn" />
+    <input type="submit" value="Enviar" class="btn hvr-grow" />
   </form>
 </template>
 

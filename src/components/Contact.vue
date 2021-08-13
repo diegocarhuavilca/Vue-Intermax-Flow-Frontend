@@ -20,7 +20,7 @@
       d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
     ></path>
   </svg> 
-  <div class="container-fluid contenido-contacto" style="background-color:#16202b;">
+  <div class="container-fluid contenido-contacto" style="background-color:#16202b;" id="contacto">
     <div class="container col-xxl-8 px-4 py-5">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6 imagen">

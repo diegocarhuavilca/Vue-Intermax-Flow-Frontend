@@ -27,6 +27,12 @@ export default {
     Contact,
     Footer,
   },
+  methods: {
+    scrollToBottom() {
+      const container = this.$refs.planes;
+      container.scrollTop = container.scrollHeight;
+    },
+  },
 };
 </script>
 

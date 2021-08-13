@@ -30,12 +30,17 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus,
-select:focus {
+input[type="color"]:focus
+{
   border-color: #fe653a;
   box-shadow: 0 1px 1px #fe653a inset, 0 0 8px #fe653a;
   outline: 0 none;
+}
+
+.form-select:focus{
+   border-color: #fe653a !important;
+  box-shadow: 0 1px 1px #fe653a inset, 0 0 8px #fe653a !important;
+  outline: 0 none !important;
 }
 
 .carousel__pagination-button {
@@ -45,8 +50,24 @@ select:focus {
 .carousel__pagination-button--active{
   background-color:#ff3801 !important ;
 }
+
+.carousel__pagination{
+  padding:0;
+}
+
+.carousel__prev {
+  background-color:#fe653a !important ;
+  left:2% !important;
+}
+
+.carousel__next {
+  background-color:#fe653a !important ;
+  right: 2% !important;
+}
 </style>
 
-<script lang="ts">
+<script>
+
+
 
 </script>

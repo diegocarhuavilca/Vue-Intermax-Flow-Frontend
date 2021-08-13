@@ -23,17 +23,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item item hvr-overline-from-left mx-4" id="plan_nav" style="cursor:pointer">
-            <a class="nav-link"  style="color:white">Planes</a>
-          </li>
-          <li class="nav-item item hvr-overline-from-left mx-4" id="cobertura_nav" style="cursor:pointer">
-            <a class="nav-link " style="color:white">Cobertura</a>
-          </li>
-          <li class="nav-item item hvr-overline-from-left mx-4" id="contacto_nav" style="cursor:pointer">
-            <a class="nav-link " style="color:white">Contacto</a>
-          </li>
-        </ul>
+       
         <ul class="navbar-nav ms-auto">
           <li class="nav-item hvr-float-shadow">
             <a

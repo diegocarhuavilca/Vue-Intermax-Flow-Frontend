@@ -144,4 +144,12 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 990px)  {
+  .contenido-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+}
+
 </style>

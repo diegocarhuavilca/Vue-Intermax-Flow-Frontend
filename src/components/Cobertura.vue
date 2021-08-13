@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" style="background-color: #1d293a;">
+  <div class="container-fluid" style="background-color: #1d293a;" id="cobertura">
     <div class="container-fluid px-5 py-5 wow slideInLeft">
       <div
         class="row flex-lg-row align-items-center justify-content-center g-5 py-4"

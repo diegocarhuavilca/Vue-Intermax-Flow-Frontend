@@ -23,29 +23,35 @@
   <div
     class="container-fluid contenido-planes py-5"
     style="background-image:url('https://res.cloudinary.com/intermax/image/upload/v1622653039/Flow/Planes/MicrosoftTeams-image_40_goqorz.png');"
+    id="planes"
   >
     <carousel
       :wrap-around="true"
       :mouse-drag="false"
       :settings="settings"
       :breakpoints="breakpoints"
-      class="container wow slideInLeft"
+      class="wow slideInLeft d-flex flex-column"
       data-wow-offset="10"
     >
-      <slide v-for="plan in planes" :key="plan.id" class="container hvr-grow">
-        <div class="container-fluid py-5">
+      <slide v-for="plan in planes" :key="plan.id">
+        <div class="container mx-0" style="width:fit-content">
           <div class="container-fluid card contenido-slide ">
             <h4>{{ plan.velocidad }}</h4>
             <h3>{{ plan.precio }}</h3>
             <h6>SOLES</h6>
             <p>Fibra optica simetrica Instalación y Router Wifi</p>
-            <button class="btn hvr-buzz-out">LO QUIERO</button>
+            <button class="btn hvr-buzz-out card-button">LO QUIERO</button>
           </div>
         </div>
       </slide>
 
       <template #addons>
-        <pagination />
+        <p
+          style="font-weight: bold; margin-top:2rem; color:white; font-size:1.2rem"
+        >
+          Costo de Instalación 120 soles. Los precios incluyen IGV.
+        </p>
+        <navigation />
       </template>
     </carousel>
   </div>
@@ -75,13 +81,13 @@
 <script>
 import "vue3-carousel/dist/carousel.css";
 import { defineComponent } from "vue";
-import { Carousel, Slide, Pagination } from "vue3-carousel";
+import { Carousel, Slide, Navigation } from "vue3-carousel";
 export default defineComponent({
   name: "Basic",
   components: {
     Carousel,
     Slide,
-    Pagination,
+    Navigation,
   },
   setup() {
     return {
@@ -90,7 +96,7 @@ export default defineComponent({
       },
       breakpoints: {
         500: {
-          itemsToShow: 2,
+          itemsToShow: 1.5,
         },
         // 1024 and up
         1200: {
@@ -99,14 +105,23 @@ export default defineComponent({
       },
     };
   },
+  mounted() {
+    var botones = document.querySelectorAll(".card-button");
+    const div_contacto = document.getElementById("contacto");
+    console.log(botones);
+    botones.forEach(function(boton) {
+      boton.addEventListener("click", checkIndex);
+    });
+
+    function checkIndex() {
+      div_contacto.scrollIntoView({
+        block: "center",
+      });
+    }
+  },
   data: function() {
     return {
       planes: [
-        {
-          id: 1,
-          velocidad: "Fibra 50 MB",
-          precio: "99",
-        },
         {
           id: 2,
           velocidad: "Fibra 100 MB",
@@ -116,6 +131,11 @@ export default defineComponent({
           id: 3,
           velocidad: "Fibra 150 MB",
           precio: "159",
+        },
+        {
+          id: 1,
+          velocidad: "Fibra 50 MB",
+          precio: "99",
         },
       ],
     };
@@ -189,5 +209,22 @@ export default defineComponent({
   fill: transparent;
 }
 
+@media only screen and (max-width: 990px) {
+  .contenido-slide {
+    h4 {
+      font-size: 1.5rem;
+    }
 
+    h3 {
+      font-size: 4rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+    p {
+      margin-top: 0rem;
+    }
+  }
+}
 </style>

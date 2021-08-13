@@ -14,8 +14,8 @@
             style="width:100%; max-height:758px;object-fit: cover;"
           />
 
-          <a v-if="slide.boton != null" href="#" class="btn btn-primary">
-            <button type="button " class="ref-contacto">
+          <a v-if="slide.boton != null" href="#" class="btn btn-primary hvr-grow">
+            <button type="button " class="ref-contacto ">
               {{ slide.boton }}
             </button>
           </a>
@@ -51,7 +51,6 @@
   transform: translate(-50%, -50%);
   width: fit-content;
   margin-top: 0.7rem;
-  padding: 0.7rem 1.2rem;
   background: linear-gradient(to right, #f74567, #fe653a);
   border-radius: rem;
   border: none;
@@ -62,6 +61,20 @@
     border: none;
     outline: none;
     color: white;
+  }
+}
+
+@media only screen and (max-width: 990px)  {
+.ref-contacto {
+    font-size: 0.7rem;
+    padding:0rem;
+    margin: 0;
+  }
+
+
+  .btn-primary{
+    margin: 0;
+    margin-top: 1rem;
   }
 }
 </style>
