@@ -169,7 +169,7 @@ export default {
          this.$router.go()
         })
         .catch((error) => {
-            alert('hola2' ,error)
+            alert(error)
         });
     },
   },
