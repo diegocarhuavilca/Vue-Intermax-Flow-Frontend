@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit="submitForm">
+  <form v-on:submit.prevent="submitForm">
     <div class="mb-3">
       <input
         type="text"
@@ -158,15 +158,18 @@ export default {
       }
     }
   },
+
+
   methods: {
     submitForm() {
       axios
         .post("https://api-intermax.herokuapp.com/contacto", this.form)
         .then((res) => {
-            console.log(res)
+         alert('Informacion registrada' ,res)
+         this.$router.go()
         })
         .catch((error) => {
-            console.log(error)
+            alert('hola2' ,error)
         });
     },
   },
