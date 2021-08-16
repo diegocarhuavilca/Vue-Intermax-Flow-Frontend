@@ -1,5 +1,9 @@
 <template>
-  <div class="container-fluid" style="background-color: #1d293a;" id="cobertura">
+  <div
+    class="container-fluid"
+    style="background-color: #1d293a;"
+    id="cobertura"
+  >
     <div class="container-fluid px-5 py-5 wow slideInLeft">
       <div
         class="row flex-lg-row align-items-center justify-content-center g-5 py-4"
@@ -26,12 +30,15 @@
             {{ cobertura.subtitulo }}
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg px-4 me-md-2 hvr-buzz-out"
+            <a
+              href="https://api.whatsapp.com/send/?phone=51981100225&text=Cobertura&app_absent=0" target="__blank"
+              ><button
+                type="button"
+                class="btn btn-primary btn-lg px-4 me-md-2 hvr-buzz-out"
+              >
+                {{ cobertura.boton }}
+              </button></a
             >
-              {{ cobertura.boton }}
-            </button>
           </div>
         </div>
       </div>

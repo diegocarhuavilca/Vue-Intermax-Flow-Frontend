@@ -96,7 +96,7 @@ export default {
             contenido: "",
             subtitulo:
               "LEY N° 29733, Ley de Protección de Datos y su Reglamento DS. N° 003-2013-JUS",
-            boton: "Descargar",
+            boton: null,
             link: null,
           },
         ],

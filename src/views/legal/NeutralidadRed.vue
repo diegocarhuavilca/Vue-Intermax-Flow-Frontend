@@ -64,13 +64,20 @@ export default {
         subtitulos: [
           {
             id: 1,
-            titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
+            titulo: "Neutralidad de la red",
             contenido:null,
             boton: "Descargar",
-            link: null,
+            link: 'https://dochub.com/diegocarhuavilca/Dbd3xkWVe2NelD6w49AYlz/neutralidad-de-red-version-1-pdf?dt=Bz-zupvMF73zqCKB4XGd',
           },
           {
             id: 2,
+            titulo: "ExpedienteNº 382-2007-TRASU-GUS-RA-Precedente",
+            contenido:null,
+            boton: "Descargar",
+            link: 'https://dochub.com/diegocarhuavilca/r4D6EkZVZoXk5p3wpQXW7O/expedientenº-382-2007-trasu-gus-ra-precedente-pdf?dt=zVjkp3Exyo1SxwMz_Cug',
+          },
+          {
+            id: 3,
             titulo: "ExpedienteN° 02674-2015-TRASU-ST-RQJ-Precedente",
             contenido: null,
             boton: "Descargar",

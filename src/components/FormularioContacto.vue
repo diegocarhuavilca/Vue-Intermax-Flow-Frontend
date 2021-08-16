@@ -1,11 +1,12 @@
 <template>
-  <form action="">
+  <form v-on:submit="submitForm">
     <div class="mb-3">
       <input
         type="text"
         class="form-control"
         id="inputName"
         placeholder="Nombre"
+        v-model="form.nombre"
         required
       />
     </div>
@@ -15,6 +16,7 @@
         class="form-control"
         id="inputEmail"
         placeholder="E-mail"
+        v-model="form.correo"
         required
       />
     </div>
@@ -24,6 +26,7 @@
         class="form-control"
         id="phone"
         placeholder="Telefono"
+        v-model="form.telefono"
         required
       />
     </div>
@@ -32,9 +35,10 @@
         class="form-select"
         aria-label="Default select example"
         id="distrito"
+        v-model="form.distrito"
         required=""
       >
-        <option selected="" disabled="">Selecciona tu distrito</option>
+        <option value="" disabled selected>Seleccion tu distrito</option>
         <option value="ANCON">ANCON</option>
         <option value="ATE">ATE</option>
         <option value="BARRANCO">BARRANCO</option>
@@ -96,22 +100,19 @@
         class="form-select"
         aria-label="Default select example"
         id="opcion-plan"
+        v-model="form.plan"
         required=""
       >
-        <option selected="" disabled="">Plan</option>
-        <option value="1">Fibra 50 Mb </option>
-        <option value="2">Fibra 100 Mb </option>
-        <option value="3">Fibra 150 Mb </option>
+         <option value="" disabled selected>Seleccion tu plan</option>
+        <option value="50">Fibra 50 Mb </option>
+        <option value="100">Fibra 100 Mb </option>
+        <option value="150">Fibra 150 Mb </option>
       </select>
     </div>
 
     <input type="submit" value="Enviar" class="btn hvr-grow" />
   </form>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style lang="scss" scoped>
 input::-webkit-outer-spin-button,
@@ -142,3 +143,32 @@ label {
   }
 }
 </style>
+
+<script>
+import axios from "axios";
+export default {
+  data(){
+    return{
+      form:{
+        nombre:"",
+        correo:"",
+        telefono:"",
+        distrito:"",
+        plan:"",
+      }
+    }
+  },
+  methods: {
+    submitForm() {
+      axios
+        .post("https://api-intermax.herokuapp.com/contacto", this.form)
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    },
+  },
+};
+</script>

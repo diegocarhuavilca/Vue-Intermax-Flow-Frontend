@@ -16,7 +16,7 @@
       <p style="text-align:justify;">
         {{ contenido.subtitulos[index].contenido }}
       </p>
-      <a :href="contenido.subtitulos[index].link"
+      <a :href="contenido.subtitulos[index].link" target="__blank"
         ><button v-if="contenido.subtitulos[index].boton" class="btn">
           {{ contenido.subtitulos[index].boton }}
         </button></a
@@ -67,7 +67,7 @@ export default {
             titulo: "Descarga el documento aquí",
             contenido:null,
             boton: "Descargar",
-            link: null,
+            link: 'https://dochub.com/diegocarhuavilca/Gd71aZOw4db3od1w2Q9AP3/uso-de-la-red-en-caso-de-emergencia-pdf?dt=zGCyWrxDwg7vKQqsJyN-',
           },
         ],
       },
