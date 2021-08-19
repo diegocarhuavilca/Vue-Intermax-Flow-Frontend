@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pages_planes",
+  "info": {
+    "name": "Planes",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Plan": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.plan"
+    },
+    "CostoInstalacion": {
+      "type": "string"
+    }
+  }
+}

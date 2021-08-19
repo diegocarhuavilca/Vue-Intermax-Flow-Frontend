@@ -20,41 +20,22 @@
       d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
     ></path>
   </svg>
-  <div
-    class="container-fluid contenido-planes py-5"
-    style="background-image:url('https://res.cloudinary.com/intermax/image/upload/v1622653039/Flow/Planes/MicrosoftTeams-image_40_goqorz.png');"
-    id="planes"
-  >
-    <carousel
-      :wrap-around="true"
-      :mouse-drag="false"
-      :settings="settings"
-      :breakpoints="breakpoints"
-      class="wow slideInLeft d-flex flex-column"
-      data-wow-offset="10"
-    >
-      <slide v-for="plan in planes" :key="plan.id">
-        <div class="container mx-0" style="width:fit-content">
-          <div class="container-fluid card contenido-slide ">
-            <h4>{{ plan.velocidad }}</h4>
-            <h3>{{ plan.precio }}</h3>
-            <h6>SOLES</h6>
-            <p>Fibra optica simetrica Instalación y Router Wifi</p>
-            <button class="btn hvr-buzz-out card-button">LO QUIERO</button>
-          </div>
+  <agile :options="myOptions" class="fondo-planes p-5">
+    <div v-for="plan in content.Plan" :key="plan.id" class="slide">
+      <div class="container" style="width:fit-content">
+        <div class="container-fluid card contenido-slide ">
+          <h4>{{ plan.Velocidad }}</h4>
+          <h3>{{ plan.Precio }}</h3>
+          <h6>SOLES</h6>
+          <p style="text-align:center;">
+            Fibra optica simetrica Instalación y Router Wifi
+          </p>
+          <button class="btn hvr-buzz-out card-button">LO QUIERO</button>
         </div>
-      </slide>
+      </div>
+    </div>
+  </agile>
 
-      <template #addons>
-        <p
-          style="font-weight: bold; margin-top:2rem; color:white; font-size:1.2rem"
-        >
-          Costo de Instalación 120 soles. Los precios incluyen IGV.
-        </p>
-        <navigation />
-      </template>
-    </carousel>
-  </div>
   <svg
     version="1.1"
     id="Capa_1"
@@ -79,32 +60,44 @@
 </template>
 
 <script>
-import "vue3-carousel/dist/carousel.css";
-import { defineComponent } from "vue";
-import { Carousel, Slide, Navigation } from "vue3-carousel";
-export default defineComponent({
-  name: "Basic",
+import { VueAgile } from "vue-agile";
+export default {
   components: {
-    Carousel,
-    Slide,
-    Navigation,
+    agile: VueAgile,
   },
-  setup() {
+  data() {
     return {
-      settings: {
-        itemsToShow: 1,
-      },
-      breakpoints: {
-        500: {
-          itemsToShow: 1.5,
-        },
-        // 1024 and up
-        1200: {
-          itemsToShow: 3,
-        },
+      myOptions: {
+        dots: false,
+        slidesToShow: 3,
+        infinite: false,
+        navButtons: false,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              dots: false,
+            },
+          },
+
+          {
+            breakpoint: 1200,
+            settings: {
+              navButtons: true,
+              dots: true,
+              infinite: false,
+              slidesToShow: 2,
+            },
+          },
+        ],
       },
     };
   },
+  props: {
+    content: Object,
+  },
+
+  
   mounted() {
     var botones = document.querySelectorAll(".card-button");
     const div_contacto = document.getElementById("contacto");
@@ -119,32 +112,12 @@ export default defineComponent({
       });
     }
   },
-  data: function() {
-    return {
-      planes: [
-        {
-          id: 2,
-          velocidad: "Fibra 100 MB",
-          precio: "129",
-        },
-        {
-          id: 3,
-          velocidad: "Fibra 150 MB",
-          precio: "159",
-        },
-        {
-          id: 1,
-          velocidad: "Fibra 50 MB",
-          precio: "99",
-        },
-      ],
-    };
-  },
-});
+};
 </script>
 
 <style lang="scss" scoped>
-.contenido-planes {
+.fondo-planes {
+  background-image: url("https://res.cloudinary.com/intermax/image/upload/v1622653039/Flow/Planes/MicrosoftTeams-image_40_goqorz.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

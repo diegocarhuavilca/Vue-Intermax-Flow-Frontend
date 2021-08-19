@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ui_botons",
+  "info": {
+    "name": "Boton",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "Contenido": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

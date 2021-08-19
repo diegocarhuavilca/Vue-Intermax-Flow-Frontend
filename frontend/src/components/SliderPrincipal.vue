@@ -1,22 +1,22 @@
 <template>
   <div class="container-fluid p-0 m-0 contenido-slider-principal">
-    <carousel
-      :items-to-show="1"
-      :wrap-around="true"
-      :autoplay="3000"
-    >
-      <slide v-for="slide in slider" :key="slide">
+    <carousel :items-to-show="1" :wrap-around="true" :autoplay="3000">
+      <slide v-for="slide in content" :key="slide">
         <div class="container-fluid contenido-slide m-0 p-0">
           <img
-            :src="slide.imagen"
+            :src="slide.image.name"
             alt=""
             class="img-fluid"
             style="width:100%; max-height:758px;object-fit: cover;"
           />
 
-          <a v-if="slide.boton != null" href="#" class="btn btn-primary hvr-grow">
+          <a
+            v-if="slide.Boton != null"
+            href="#"
+            class="btn btn-primary hvr-grow"
+          >
             <button type="button " class="ref-contacto ">
-              {{ slide.boton }}
+              {{ slide.Boton.Contenido }}
             </button>
           </a>
         </div>
@@ -64,15 +64,14 @@
   }
 }
 
-@media only screen and (max-width: 990px)  {
-.ref-contacto {
+@media only screen and (max-width: 990px) {
+  .ref-contacto {
     font-size: 0.7rem;
-    padding:0rem;
+    padding: 0rem;
     margin: 0;
   }
 
-
-  .btn-primary{
+  .btn-primary {
     margin: 0;
     margin-top: 1rem;
   }
@@ -88,36 +87,10 @@ export default {
     Carousel,
     Slide,
   },
-  
-  data: function() {
-    return {
-      slider: [
-        {
-          id: 1,
-          imagen:
-            "https://res.cloudinary.com/intermax/image/upload/v1623421063/Flow/Carousel/MicrosoftTeams-image_7_un2lek_mnceyj.webp",
-          boton: "Conectacte",
-        },
-        {
-          id: 2,
-          imagen:
-            "https://res.cloudinary.com/intermax/image/upload/v1623421063/Flow/Carousel/MicrosoftTeams-image_6_gilhfl_b4urs0.webp",
-          boton: "Dale Flow",
-        },
-        {
-          id: 3,
-          imagen:
-            "https://res.cloudinary.com/intermax/image/upload/v1623951293/Flow/Carousel/SlideGame_mo6jhh_crmgwg.webp",
-          boton: "Dale play",
-        },
-        {
-          id: 4,
-          imagen:
-            "https://res.cloudinary.com/intermax/image/upload/v1623946479/Flow/Carousel/MicrosoftTeams-image_50_tjdxeq-min_quszhh.webp",
-          boton: null,
-        },
-      ],
-    };
+  props:{
+    content : Object,
   },
+
+
 };
 </script>

@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "name": "Home",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Banners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.banners"
+    },
+    "CardsInformacion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.cards-informacion"
+    },
+    "Planes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.planes"
+    },
+    "Cobertura": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.cobertura"
+    }
+  }
+}

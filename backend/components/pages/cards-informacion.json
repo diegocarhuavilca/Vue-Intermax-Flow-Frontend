@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_pages_cards_informacions",
+  "info": {
+    "name": "CardsInformacion",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CardInformacion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.card-informacion",
+      "max": 3,
+      "min": 3
+    }
+  }
+}

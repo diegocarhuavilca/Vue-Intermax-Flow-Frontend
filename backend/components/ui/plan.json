@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ui_plans",
+  "info": {
+    "name": "Plan",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "Velocidad": {
+      "type": "string"
+    },
+    "Precio": {
+      "type": "string"
+    }
+  }
+}
