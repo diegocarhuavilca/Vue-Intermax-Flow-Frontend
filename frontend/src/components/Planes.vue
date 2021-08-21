@@ -21,14 +21,14 @@
     ></path>
   </svg>
   <agile :options="myOptions" class="fondo-planes p-5">
-    <div v-for="plan in content.Plan" :key="plan.id" class="slide">
+    <div v-for="plan in content" :key="plan.id" class="slide">
       <div class="container" style="width:fit-content">
         <div class="container-fluid card contenido-slide ">
-          <h4>{{ plan.Velocidad }}</h4>
-          <h3>{{ plan.Precio }}</h3>
+          <h4>{{ plan.velocidad }}</h4>
+          <h3>{{ plan.precio }}</h3>
           <h6>SOLES</h6>
           <p style="text-align:center;">
-            Fibra optica simetrica Instalación y Router Wifi
+            {{ plan.descripcion }}
           </p>
           <button class="btn hvr-buzz-out card-button">LO QUIERO</button>
         </div>
@@ -77,16 +77,17 @@ export default {
             breakpoint: 600,
             settings: {
               dots: false,
+              slidesToShow: 2,
             },
           },
 
           {
             breakpoint: 1200,
             settings: {
-              navButtons: true,
-              dots: true,
+              navButtons: false,
+              dots: false,
               infinite: false,
-              slidesToShow: 2,
+              slidesToShow: 3,
             },
           },
         ],
@@ -97,7 +98,6 @@ export default {
     content: Object,
   },
 
-  
   mounted() {
     var botones = document.querySelectorAll(".card-button");
     const div_contacto = document.getElementById("contacto");

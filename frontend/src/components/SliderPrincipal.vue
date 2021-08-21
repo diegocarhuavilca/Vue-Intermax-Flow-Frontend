@@ -4,19 +4,19 @@
       <slide v-for="slide in content" :key="slide">
         <div class="container-fluid contenido-slide m-0 p-0">
           <img
-            :src="slide.image.name"
+            :src="slide.imagen.name"
             alt=""
             class="img-fluid"
             style="width:100%; max-height:758px;object-fit: cover;"
           />
 
           <a
-            v-if="slide.Boton != null"
+            v-if="slide.boton != null"
             href="#"
             class="btn btn-primary hvr-grow"
           >
             <button type="button " class="ref-contacto ">
-              {{ slide.Boton.Contenido }}
+              {{ slide.boton.Contenido }}
             </button>
           </a>
         </div>
