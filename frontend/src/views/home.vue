@@ -3,14 +3,13 @@
     <Navbar />
     <SliderPrincipal :content="contenido_slider" />
     <CardsInformacion :content="contenido_cards" />
-    <Planes :content="contenido_planes" />
-    <Cobertura :content="contenido_cobertura" />
-    <Carousel :content="contenido_planes" />
+   <Planes :content="contenido_planes" />
+     <Cobertura :content="contenido_cobertura" />
     <Contact />
-    <Footer />
+    <Footer :content="contenido_footer" :legales="contenido_legal"/>
   </div>
-  <div v-else class="container-fluid d-flex" style="min-height:100vh">
-    <lottie-player src="https://assets5.lottiefiles.com/datafiles/zc3XRzudyWE36ZBJr7PIkkqq0PFIrIBgp4ojqShI/newAnimation.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
+  <div v-else class="container-fluid d-flex charging" >
+    <lottie-player src="https://res.cloudinary.com/intermax/raw/upload/v1629750495/Flow/lf30_editor_2ahluuzn_sauyna.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
   </div>
 </template>
 
@@ -37,12 +36,15 @@ export default {
   async beforeCreate() {
     try {
       const response = await axios.get(
-        "http://localhost:1337/pagina-principal"
+        "https://backend-strapi-flow.herokuapp.com/pagina-principal"
       );
-      this.contenido_slider = response.data.BannerPrincipal.banner;
-      this.contenido_cards = response.data.CardsInformacion.card;
-      this.contenido_planes = response.data.Planes.plan;
+      const legal = await axios.get('https://backend-strapi-flow.herokuapp.com/legals');
+      this.contenido_slider = response.data.BannerPrincipal.Banner;
+      this.contenido_cards = response.data.CardsInformacion.Cards;
+      this.contenido_planes = response.data.Planes.Plan;
       this.contenido_cobertura = response.data.Cobertura;
+      this.contenido_footer = response.data.Footer;
+      this.contenido_legal = legal.data;
       this.content_ready = true;
     } catch (error) {
       this.error = error;
@@ -55,6 +57,7 @@ export default {
       contenido_cards: [],
       contenido_planes: [],
       contenido_cobertura: [],
+      contenido_footer: [],
       content_ready: false,
     };
   },
@@ -70,5 +73,11 @@ export default {
 <style>
 .agile__slides--regular {
   justify-content: center !important;
+}
+
+.charging{
+  min-height: 100vh;
+  justify-content:center !important;
+  align-items: center;
 }
 </style>

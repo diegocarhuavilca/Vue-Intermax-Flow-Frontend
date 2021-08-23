@@ -10,7 +10,7 @@
       >
         <div class="col-6 col-sm-8 col-lg-6 imagen">
           <img
-            src="https://res.cloudinary.com/intermax/image/upload/v1621265056/Flow/Cobertura/img1_c89apr.webp"
+            :src="content.imagen.name"
             class="d-block img-fluid"
             loading="lazy"
           />

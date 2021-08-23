@@ -8,7 +8,7 @@
         <div class="card-body">
           <img :src="card.imagen.name" alt="" class="img-fluid" style="width:70%" />
           <h5 class="card-title">{{ card.titulo }}</h5>
-          <p class="card-text">{{ card.texto }}</p> 
+          <p class="card-text">{{ card.contenido }}</p> 
         </div>
       </div>
     </div>

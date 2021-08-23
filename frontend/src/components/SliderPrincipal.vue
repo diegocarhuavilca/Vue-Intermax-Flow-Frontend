@@ -4,19 +4,19 @@
       <slide v-for="slide in content" :key="slide">
         <div class="container-fluid contenido-slide m-0 p-0">
           <img
-            :src="slide.imagen.name"
+            :src="slide.image.name"
             alt=""
             class="img-fluid"
-            style="width:100%; max-height:758px;object-fit: cover;"
+            style="width: 100%; max-height: 758px; object-fit: cover"
           />
 
           <a
-            v-if="slide.boton != null"
+            v-if="slide.Boton != null"
             href="#"
             class="btn btn-primary hvr-grow"
           >
-            <button type="button " class="ref-contacto ">
-              {{ slide.boton.Contenido }}
+            <button type="button " class="ref-contacto">
+              {{ slide.Boton.texto }}
             </button>
           </a>
         </div>
@@ -87,10 +87,8 @@ export default {
     Carousel,
     Slide,
   },
-  props:{
-    content : Object,
+  props: {
+    content: Object,
   },
-
-
 };
 </script>

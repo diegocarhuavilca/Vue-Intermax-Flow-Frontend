@@ -38,7 +38,7 @@
         v-model="form.distrito"
         required=""
       >
-        <option value="" disabled selected>Seleccion tu distrito</option>
+        <option value="" disabled selected>Selecciona tu distrito</option>
         <option value="ANCON">ANCON</option>
         <option value="ATE">ATE</option>
         <option value="BARRANCO">BARRANCO</option>
@@ -103,7 +103,7 @@
         v-model="form.plan"
         required=""
       >
-         <option value="" disabled selected>Seleccion tu plan</option>
+         <option value="" disabled selected>Selecciona tu plan</option>
         <option value="50">Fibra 50 Mb </option>
         <option value="100">Fibra 100 Mb </option>
         <option value="150">Fibra 150 Mb </option>

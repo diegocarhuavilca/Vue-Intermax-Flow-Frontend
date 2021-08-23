@@ -20,14 +20,14 @@
       d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
     ></path>
   </svg>
-  <agile :options="myOptions" class="fondo-planes p-5">
+  <agile :options="myOptions" class="fondo-planes p-5" id="planes">
     <div v-for="plan in content" :key="plan.id" class="slide">
-      <div class="container" style="width:fit-content">
-        <div class="container-fluid card contenido-slide ">
+      <div class="container" style="width: fit-content">
+        <div class="container-fluid card contenido-slide">
           <h4>{{ plan.velocidad }}</h4>
           <h3>{{ plan.precio }}</h3>
           <h6>SOLES</h6>
-          <p style="text-align:center;">
+          <p style="text-align: center">
             {{ plan.descripcion }}
           </p>
           <button class="btn hvr-buzz-out card-button">LO QUIERO</button>
@@ -78,11 +78,13 @@ export default {
             settings: {
               dots: false,
               slidesToShow: 2,
+              navButtons: true,
+              infinite: true,
             },
           },
 
           {
-            breakpoint: 1200,
+            breakpoint: 900,
             settings: {
               navButtons: false,
               dots: false,
@@ -101,8 +103,7 @@ export default {
   mounted() {
     var botones = document.querySelectorAll(".card-button");
     const div_contacto = document.getElementById("contacto");
-    console.log(botones);
-    botones.forEach(function(boton) {
+    botones.forEach(function (boton) {
       boton.addEventListener("click", checkIndex);
     });
 
