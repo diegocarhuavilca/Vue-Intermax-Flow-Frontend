@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
 import router from './router'
-createApp(App).use(router).mount('#app')
+
+import {
+    VueReCaptcha
+} from "vue-recaptcha-v3";
+
+createApp(App).use(router).use(VueReCaptcha, {
+    siteKey: "6Lel4c4bAAAAAPx-Uof6k7_y5tPCepAxYgTUS8_l"
+}).mount('#app')
