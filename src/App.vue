@@ -56,12 +56,22 @@ input[type="color"]:focus {
 
 .carousel__prev {
   background-color: #fe653a !important ;
-  left: 2% !important;
+  left: -5% !important;
+  display:none !important;
+
 }
 
 .carousel__next {
   background-color: #fe653a !important ;
-  right: 2% !important;
+  right: -5% !important;
+  display:none !important;
+
+}
+
+@media screen and (max-width: 1400px) {
+  .carousel__next,.carousel__prev{
+    display:block !important;
+  }
 }
 </style>
 

@@ -1,16 +1,23 @@
 <template>
-  <div class="container-fluid p-0 m-0" v-if="content_ready">
-    <Navbar />
-    <SliderPrincipal :content="contenido_slider" />
-    <CardsInformacion :content="contenido_cards" />
-   <Planes :content="contenido_planes" />
-     <Cobertura :content="contenido_cobertura" />
-    <Contact />
-    <Footer :content="contenido_footer" :legales="contenido_legal"/>
-  </div>
-  <div v-else class="container-fluid d-flex charging" >
-    <lottie-player src="https://res.cloudinary.com/intermax/raw/upload/v1629750495/Flow/lf30_editor_2ahluuzn_sauyna.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-  </div>
+    <div class="container-fluid p-0 m-0" v-if="content_ready">
+        <Navbar />
+        <SliderPrincipal :content="contenido_slider" />
+        <CardsInformacion :content="contenido_cards" />
+        <Planes :content="contenido_planes" />
+        <Cobertura :content="contenido_cobertura" />
+        <Contact />
+        <Footer :content="contenido_footer" :legales="contenido_legal" />
+    </div>
+    <div v-else class="container-fluid d-flex charging">
+        <lottie-player
+            src="https://res.cloudinary.com/intermax/raw/upload/v1629750495/Flow/lf30_editor_2ahluuzn_sauyna.json"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px;"
+            loop
+            autoplay
+        ></lottie-player>
+    </div>
 </template>
 
 <script>
@@ -23,61 +30,63 @@ import Cobertura from "../components/Cobertura.vue";
 import Contact from "../components/Contact.vue";
 import Footer from "../components/Footer.vue";
 export default {
-  name: "App",
-  components: {
-    Navbar,
-    SliderPrincipal,
-    CardsInformacion,
-    Planes,
-    Cobertura,
-    Contact,
-    Footer,
-  },
-  async beforeCreate() {
-    try {
-      const response = await axios.get(
-        "https://backend-strapi-flow.herokuapp.com/pagina-principal"
-      );
-      const legal = await axios.get('https://backend-strapi-flow.herokuapp.com/legals');
-      this.contenido_slider = response.data.BannerPrincipal.Banner;
-      this.contenido_cards = response.data.CardsInformacion.Cards;
-      this.contenido_planes = response.data.Planes.Plan;
-      this.contenido_cobertura = response.data.Cobertura;
-      this.contenido_footer = response.data.Footer;
-      this.contenido_legal = legal.data;
-      this.content_ready = true;
-    } catch (error) {
-      this.error = error;
-      alert(this.error);
-    }
-  },
-  data() {
-    return {
-      contenido_slider: [],
-      contenido_cards: [],
-      contenido_planes: [],
-      contenido_cobertura: [],
-      contenido_footer: [],
-      content_ready: false,
-    };
-  },
-  methods: {
-    scrollToBottom() {
-      const container = this.$refs.planes;
-      container.scrollTop = container.scrollHeight;
+    name: "App",
+    components: {
+        Navbar,
+        SliderPrincipal,
+        CardsInformacion,
+        Planes,
+        Cobertura,
+        Contact,
+        Footer,
     },
-  },
+    async beforeCreate() {
+        try {
+            const response = await axios.get(
+                "http://localhost:1337/pagina-principal"
+            );
+            const legal = await axios.get(
+                "http://localhost:1337/legales"
+            );
+            this.contenido_slider = response.data.BannerPrincipal.Banner;
+            this.contenido_cards = response.data.CardsInformacion.Cards;
+            this.contenido_planes = response.data.Planes.Plan;
+            this.contenido_cobertura = response.data.Cobertura;
+            this.contenido_footer = response.data.Footer;
+            this.contenido_legal = legal.data;
+            this.content_ready = true;
+        } catch (error) {
+            this.error = error;
+            alert(this.error);
+        }
+    },
+    data() {
+        return {
+            contenido_slider: [],
+            contenido_cards: [],
+            contenido_planes: [],
+            contenido_cobertura: [],
+            contenido_footer: [],
+            content_ready: false,
+        };
+    },
+    methods: {
+        scrollToBottom() {
+            const container = this.$refs.planes;
+            container.scrollTop = container.scrollHeight;
+        },
+    },
 };
 </script>
 
 <style>
 .agile__slides--regular {
-  justify-content: center !important;
+    justify-content: center !important;
 }
 
-.charging{
-  min-height: 100vh;
-  justify-content:center !important;
-  align-items: center;
+.charging {
+    min-height: 100vh;
+    justify-content: center !important;
+    align-items: center;
 }
 </style>

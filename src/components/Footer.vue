@@ -46,15 +46,15 @@
           <ul class="list-unstyled">
             <li>
               <p>
-                <i class="fas fa-map-marker-alt pe-2"></i>{{ content.Contacto.direccion }}
+                <i class="fas fa-map-marker-alt pe-2"></i>Ernesto Diez Canseco 236, ofic. 403, Miraflores
               </p>
             </li>
             <li>
-              <p><i class="fas fa-phone pe-2"></i>{{ content.Contacto.telefono }}</p>
+              <p><i class="fas fa-phone pe-2"></i>+51 1740 1740</p>
             </li>
             <li>
               <p>
-                <i class="fas fa-envelope pe-2 mb-0"></i>{{ content.Contacto.correo }}
+                <i class="fas fa-envelope pe-2 mb-0"></i>contacto@flow.pe
               </p>
             </li>
           </ul>
@@ -71,11 +71,11 @@
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                :href="legal.link"
+                href="#"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
-                >{{ legal.Titulo }}</a
+                >{{ legal.titulo }}</a
               >
             </li>
           </ul>
