@@ -43,10 +43,10 @@ export default {
     async beforeCreate() {
         try {
             const response = await axios.get(
-                "http://localhost:1337/pagina-principal"
+                "https://backend-strapi-flow.herokuapp.com/pagina-principal"
             );
             const legal = await axios.get(
-                "http://localhost:1337/legales"
+                "https://backend-strapi-flow.herokuapp.com/legales"
             );
             this.contenido_slider = response.data.BannerPrincipal.Banner;
             this.contenido_cards = response.data.CardsInformacion.Cards;
