@@ -1,214 +1,308 @@
 <template>
-  <Navbar />
+    <Navbar />
 
-  <div class="container w-50" style="color:white; margin-top:5rem;margin-bottom:10rem;">
-    <h1>{{ contenido.titulo }}</h1>
-
-    <div
-      style="margin-top:2.5rem;"
-      v-for="(content, index) in contenido.subtitulos"
-      :key="contenido.subtitulos[index].id"
-    >
-      <h2 style="margin-top:2rem">{{ contenido.subtitulos[index].titulo }}</h2>
-      <div
-        v-for="(sub, index2) in contenido.subtitulos[index].contenido"
-        :key="index2"
-      >
-        <h4 class="subtitulos" style="margin-top:1.5rem">
-          {{ sub.titulo }}
-        </h4>
+    <div class="container px-5" style="color:white; margin-top:1rem;margin-bottom:10rem;">
+        <h1>{{ contenido.titulo }}</h1>
 
         <div
-          class="container mx-1 my-4"
-          v-for="(info, i) in contenido.subtitulos[index].contenido[index2]
+            style="margin-top:2.5rem;"
+            v-for="(content, index) in contenido.subtitulos"
+            :key="contenido.subtitulos[index].id"
+        >
+            <h2 style="margin-top:2rem">{{ contenido.subtitulos[index].titulo }}</h2>
+            <div v-for="(sub, index2) in contenido.subtitulos[index].contenido" :key="index2">
+                <h4 class="subtitulos" style="margin-top:1.5rem">{{ sub.titulo }}</h4>
+
+                <div
+                    class="container mx-1 my-4"
+                    v-for="(info, i) in contenido.subtitulos[index].contenido[index2]
             .contenido"
-          :key="i"
-        >
-          <h5 class="mx-2">{{ info.titulo }}</h5>
-          <h6 class="mx-3">{{ info.contenido }}</h6>
-          <p class="mx-5" style="color:gray" v-if="info.mensaje != null">
-            {{ info.mensaje }}
-          </p>
+                    :key="i"
+                >
+                    <h5 class="mx-2">{{ info.titulo }}</h5>
+                    <h6 class="mx-3">{{ info.contenido }}</h6>
+                    <p
+                        class="mx-5"
+                        style="color:gray"
+                        v-if="info.mensaje != null"
+                    >{{ info.mensaje }}</p>
+                </div>
+
+                <a :href="sub.link" target="_blank" style="margin-left:2rem">
+                    <button v-if="sub.boton" class="btn">{{ sub.boton }}</button>
+                </a>
+            </div>
         </div>
-
-        <a :href="sub.link" target="_blank" style="margin-left:2rem"
-          ><button v-if="sub.boton" class="btn">
-            {{ sub.boton }}
-          </button></a
-        >
-      </div>
     </div>
-  </div>
- <svg
-    version="1.1"
-    id="Capa_1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="0px"
-    y="0px"
-    viewBox="0 0 1240 120"
-    style="enable-background: new 0 0 1240 120"
-    xml:space="preserve"
-  >
-    <path
-      class="st3"
-      d="M-5.24,114.75c393.1-208.54,855.91,98.49,1250.49-98.81v-25.4L-5.24-7.43V114.75z"
-    ></path>
+    <svg
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1240 120"
+        style="enable-background: new 0 0 1240 120"
+        xml:space="preserve"
+    >
+        <path
+            class="st3"
+            d="M-5.24,114.75c393.1-208.54,855.91,98.49,1250.49-98.81v-25.4L-5.24-7.43V114.75z"
+        />
 
-    <path
-      class="st4"
-      d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
-    ></path>
-  </svg>
-  <Footer />
+        <path
+            class="st4"
+            d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
+        />
+    </svg>
+    <Footer />
 </template>
 
 <script>
 import Navbar from "@/components/Navbar2.vue";
 import Footer from "@/components/Footer.vue";
 export default {
-  components: {
-    Navbar,
-    Footer,
-  },
+    components: {
+        Navbar,
+        Footer,
+    },
 
-  data: function() {
-    return {
-      contenido: {
-        id: 1,
-        titulo: "Informacion Abonados",
-        subtitulos: [
-          {
-            id: 1,
-            titulo: "Gestiona tus servicios",
-            contenido: [
-              {
+    data: function () {
+        return {
+            contenido: {
                 id: 1,
-                titulo: "Nuestras Oficinas y horarios de atencion",
-                contenido: [
-                  {
-                    id: 1,
-                    titulo: "Direccion",
-                    contenido: "Avenida Ernesto Diez Canseco 236 Oficina 403",
-                    mensaje: null,
-                  },
-                  {
-                    id: 2,
-                    titulo: "Horario de Atencion",
-                    contenido:
-                      "De lunes a viernes de 9:00 a 17:30 y sábados de 9:00 a 13:00",
-                    mensaje:
-                      "*Debido a la emergencia sanitaria estamos atendiendo de manera remota desde nuestros hogares.",
-                  },
-                  {
-                    id: 3,
-                    titulo:
-                      "Puede contactarnos a nuestra central telefónica 740-1740",
-                    contenido: null,
-                    mensaje: null,
-                  },
+                titulo: "Informacion Abonados",
+                subtitulos: [
+                    {
+                        id: 1,
+                        titulo: "Gestiona tus servicios",
+                        contenido: [
+                            {
+                                id: 1,
+                                titulo: "Nuestras Oficinas y horarios de atencion",
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "Direccion",
+                                        contenido:
+                                            "Avenida Ernesto Diez Canseco 236 Oficina 403",
+                                        mensaje: null,
+                                    },
+                                    {
+                                        id: 2,
+                                        titulo: "Horario de Atencion",
+                                        contenido:
+                                            "De lunes a viernes de 9:00 a 17:30 y sábados de 9:00 a 13:00",
+                                        mensaje:
+                                            "**Debido a la emergencia Sanitaria estamos atendiendo de manera remota desde nuestros hogares. Puede contactarnos a nuestra central telefónica (51) 1740-1740",
+                                    },
+                                ],
+                                boton: null,
+                                link: "",
+                            },
+                            {
+                                id: 2,
+                                titulo: "Mide la velocidad de tu internet",
+                                contenido: null,
+                                boton: "Mide tu velocidad Aqui",
+                                link: "https://www.speedtest.net",
+                            },
+                        ],
+                    },
+                    {
+                        id: 2,
+                        titulo: "Contratos y requisitos",
+                        contenido: [
+                            {
+                                id: 1,
+                                titulo: "CONTRATO DE ABONADO FLOW (10.08.2021)",
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/01_CONTRATO_DE_ABONADO_FLOW_10_08_2021_3ba22c42f6.pdf",
+                            },
+                            {
+                                id: 2,
+                                titulo: "FORMULARIO DE REQUERIMIENTO INTERNET FLOW (10.08.2021)",
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/02_FORMULARIO_DE_REQUERIMIENTO_INTERNET_FLOW_10_08_2021_c1ca7afa78.pdf",
+                            },
+                            {
+                                id: 2,
+                                titulo: "PROCEDIMIENTOS PARA LA ATENCIÓN DE AVERÍAS Y TRABAJOS DE OPERACIÓN Y MANTENIMIENTO",
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/ANEXO_2_PROCEDIMIENTOS_PARA_LA_ATENCION_DE_AVERIAS_Y_TRABAJOS_DE_OPERACION_Y_MANTENIMIENTO_73f3e49eb0.pdf",
+                            },
+                        ],
+                    },
+                    {
+                        id: 3,
+                        titulo: "Atención de reclamos y solicitudes",
+                        contenido: [
+                            {
+                                id: 1,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "FORMULARIO DE QUEJA-Anexo 2.5",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/FORMULARIO_DE_QUEJA_Anexo_2_5_ccd18cb701.pdf",
+                            },
+                            {
+                                id: 2,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "FORMULARIO DE RECLAMOS _RECURSO DE APELACION",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/FORMULARIO_DE_RECLAMOS_RECURSO_DE_APELACION_Anexo_2_4_f927a12cb4.pdf",
+                            },
+                            {
+                                id: 3,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "FORMULARIO DE RECLAMO-SERVICIO DE TELEFONÍA FIJA",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/FORMULARIO_DE_RECLAMO_SERVICIO_DE_TELEFONIA_FIJA_Anexo_2_1_aa7f0467ce.pdf",
+                            },
+                            {
+                                id: 4,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "FORMULARIO DE RECLAMO OTROS SERVICIOS",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/FORMULARIO_DE_RECLAMO_OTROS_SERVICIOS_Anexo_2_3_44a990df2a.pdf",
+                            },
+                            {
+                                id: 5,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "Relacion de medios probatorios",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Relacion_de_Medios_Probatorios_fa99a01ef4.pdf",
+                            },
+                            {
+                                id: 6,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "Expediente  Nº 06982-2003-TRASU-GUS-Precedente",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_06982_2003_TRASU_GUS_Precedente_0e83030732.pdf",
+                            },
+                            {
+                                id: 7,
+                                contenido: [
+                                    {
+                                        id: 1,
+                                        titulo: "ExpedienteN° 02674-2015-TRASU-ST-RQJ-Precedente",
+                                        contenido: null,
+                                        mensaje: null,
+                                    },
+                                ],
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_02674_2015_TRASU_ST_RQJ_Precedente_e396ffba75.pdf",
+                            },
+                        ],
+                    },
+                    {
+                        id: 1,
+                        titulo: "Reclamos Precedentes",
+                        contenido: [
+                            {
+                                id: 1,
+                                titulo: "Expediente N° 02674-2015-TRASU-ST-RQJ-Precedente",
+                                contenido: null,
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_02674_2015_TRASU_ST_RQJ_Precedente_e28665c773.pdf",
+                            },
+                            {
+                                id: 2,
+                                titulo: "Expediente Nº 12957-2005-TRASU-GUS-RA-Precedente",
+                                contenido: null,
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_12957_2005_TRASU_GUS_RA_Precedente_7277e26177.pdf",
+                            },
+                            {
+                                id: 3,
+                                titulo: "Expediente Nº 382-2007-TRASU-GUS-RA-Precedente",
+                                contenido: null,
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_382_2007_TRASU_GUS_RA_Precedente_cf106c0226.pdf",
+                            },
+                            {
+                                id: 4,
+                                titulo: "Expediente Nº 07837-2003-TRASU-GUS-RQJ-Precedente",
+                                contenido: null,
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_07837_2003_TRASU_GUS_RQJ_Precedente_76b2bd4cea.pdf",
+                            },
+                            {
+                                id: 5,
+                                titulo: "Expediente  Nº 06982-2003-TRASU-GUS-Precedente",
+                                contenido: null,
+                                boton: "Descargar",
+                                link: "https://backend-strapi-flow.herokuapp.com/uploads/Expediente_N_06982_2003_TRASU_GUS_Precedente_e8bac64050.pdf",
+                            },
+                        ],
+                    },
                 ],
-                boton: null,
-                link: "",
-              },
-              {
-                id: 2,
-                titulo: "Mide la velocidad de tu internet",
-                contenido: null,
-                boton: "Mide tu velocidad Aqui",
-                link: "https://www.speedtest.net",
-              },
-              {
-                id: 3,
-                titulo: "Directorio telefónico",
-                contenido: null,
-                boton: "Directorio Telefonico Aqui",
-                link: "https://www.speedtest.net",
-              },
-            ],
-          },
-          {
-            id: 2,
-            titulo: "Contratos y requisitos",
-            contenido: [
-              
-              {
-                id: 1,
-                titulo: "Alta de servicio",
-                contenido: [{
-                    id: 1,
-                    titulo: "Dirección",
-                    contenido: "Avenida Ernesto Diez Canseco 236 Oficina 403",
-                    mensaje: null,
-                  },],
-                boton: "Descargar",
-                link: "/",
-              },
-            ],
-          },
-          {
-            id: 3,
-            titulo: "Atención de reclamos y solicitudes",
-            contenido: [
-              
-              {
-                id: 1,
-                titulo: "Procedimiento para presentar reclamos, recursos y quejas",
-                contenido: [{
-                    id: 1,
-                    titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
-                    contenido: null,
-                    mensaje: null,
-                  },],
-                boton: "Descargar",
-                link: "/",
-              },
-              {
-                id: 2,
-                titulo: "Expedientes de reclamos en primera instancia",
-                contenido: [{
-                    id: 1,
-                    titulo: "Expediente Nº 06982-2003-TRASU-GUS-Precedente",
-                    contenido: null,
-                    mensaje: null,
-                  },],
-                boton: "Descargar",
-                link: "/",
-              },
-            ],
-          },
-        ],
-      },
-    };
-  },
+            },
+        };
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 h1,
 .subtitulos {
-  background: linear-gradient(to right, #f74567, #fe653a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, #f74567, #fe653a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 .btn {
-  width: fit-content;
-  margin-top: 0.7rem;
-  padding: 0.7rem 1.2rem;
-  background: linear-gradient(to right, #f74567, #fe653a);
-  border-radius: rem;
-  border: none;
-  color: white;
-  &:hover {
+    width: fit-content;
+    margin-top: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    background: linear-gradient(to right, #f74567, #fe653a);
+    border-radius: rem;
+    border: none;
     color: white;
-  }
+    &:hover {
+        color: white;
+    }
 }
 .st3 {
-  fill: transparent;
+    fill: transparent;
 }
 
 .st4 {
-  fill: #1b2638;
+    fill: #1b2638;
 }
 </style>

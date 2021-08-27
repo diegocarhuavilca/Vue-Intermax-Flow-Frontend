@@ -67,7 +67,7 @@ export default {
             titulo: "Descarga el documento aquí",
             contenido:null,
             boton: "Descargar",
-            link: 'https://dochub.com/diegocarhuavilca/Gd71aZOw4db3od1w2Q9AP3/uso-de-la-red-en-caso-de-emergencia-pdf?dt=zGCyWrxDwg7vKQqsJyN-',
+            link: 'https://backend-strapi-flow.herokuapp.com/uploads/USO_DE_LA_RED_EN_CASO_DE_EMERGENCIA_cad127baa9.pdf',
           },
         ],
       },

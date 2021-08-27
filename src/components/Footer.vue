@@ -65,17 +65,75 @@
 
           <ul class="list-unstyled p-0">
             <li
-              v-for="legal in legales"
-              :key="legal.id"
               class="mb-2 hvr-forward"
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                href="#"
+                href="/informacion-abonados"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
-                >{{ legal.titulo }}</a
+                >Informacion de Abonados y Usuarios</a
+              >
+            </li>
+            <li
+              class="mb-2 hvr-forward"
+              style="display: inline-block; width: 100%; cursor:pointer"
+            >
+              <a
+                href="https://backend-strapi-flow.herokuapp.com/uploads/Portabilidad_numerica_1_2_f127384698.pdf"
+                class="text-white"
+                style="text-decoration: none"
+                target="_blank"
+                >Portabilidad Numerica</a
+              >
+            </li>
+            <li
+              class="mb-2 hvr-forward"
+              style="display: inline-block; width: 100%; cursor:pointer"
+            >
+              <a
+                href="https://backend-strapi-flow.herokuapp.com/uploads/USO_DE_LA_RED_EN_CASO_DE_EMERGENCIA_cad127baa9.pdf"
+                class="text-white"
+                style="text-decoration: none"
+                target="_blank"
+                >Uso de la Red en Casos de Emergencia</a
+              >
+            </li>
+            <li
+              class="mb-2 hvr-forward"
+              style="display: inline-block; width: 100%; cursor:pointer"
+            >
+              <a
+                href="/neutralidad-de-red"
+                class="text-white"
+                style="text-decoration: none"
+                target="_blank"
+                >Neutralidad de la Red</a
+              >
+            </li>
+            <li
+              class="mb-2 hvr-forward"
+              style="display: inline-block; width: 100%; cursor:pointer"
+            >
+              <a
+                href="https://backend-strapi-flow.herokuapp.com/uploads/POLITICA_DE_PROTECCION_DE_DATOS_Y_PRIVACIDAD_DE_INTERMAX_1_b452fbf863.pdf"
+                class="text-white"
+                style="text-decoration: none"
+                target="_blank"
+                >Ley de Proteccion de Datos</a
+              >
+            </li>
+            <li
+              class="mb-2 hvr-forward"
+              style="display: inline-block; width: 100%; cursor:pointer"
+            >
+              <a
+                href="https://backend-strapi-flow.herokuapp.com/uploads/TERMINOS_Y_CONDICIONES_DE_LA_WEB_2af21a2673.pdf"
+                class="text-white"
+                style="text-decoration: none"
+                target="_blank"
+                >Terminos y Condiciones</a
               >
             </li>
           </ul>
