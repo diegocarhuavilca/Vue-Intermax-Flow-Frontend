@@ -162,7 +162,7 @@ export default {
             };
 
             axios
-                .post("http://localhost:1337/contactos", data)
+                .post("https://backend-strapi-flow.herokuapp.com/contactos", data)
                 .then(() => {
                     this.enviado = true;
                     (this.nombre = ""),
