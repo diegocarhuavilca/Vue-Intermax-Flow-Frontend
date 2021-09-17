@@ -4,7 +4,7 @@
       <slide v-for="slide in content" :key="slide">
         <div class="container-fluid contenido-slide m-0 p-0">
           <img
-            :src="slide.image.name"
+            :src="'http://45.182.37.13:1337'+slide.image.url"
             alt=""
             class="img-fluid"
             style="width: 100%; max-height: 758px; object-fit: cover"

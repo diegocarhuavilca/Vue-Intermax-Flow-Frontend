@@ -6,7 +6,7 @@
     <div class="col-sm-3 mx-4 wow slideInLeft" data-wow-offset="10" v-for="card in content" :key="card.id">
       <div class="card">
         <div class="card-body">
-          <img :src="card.imagen.name" alt="" class="img-fluid" style="width:70%" />
+          <img :src="'http://45.182.37.13:1337'+card.imagen.url" alt="" class="img-fluid" style="width:70%" />
           <h5 class="card-title">{{ card.titulo }}</h5>
           <p class="card-text">{{ card.contenido }}</p> 
         </div>

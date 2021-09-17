@@ -10,7 +10,7 @@
       >
         <div class="col-6 col-sm-8 col-lg-6 imagen">
           <img
-            :src="content.imagen.name"
+            :src="'http://45.182.37.13:1337'+content.imagen.url"
             class="d-block img-fluid"
             loading="lazy"
           />
