@@ -43,10 +43,10 @@ export default {
     async beforeCreate() {
         try {
             const response = await axios.get(
-                "http://45.182.37.13:1337/pagina-principal"
+                "https://www2.flow.pe/pagina-principal"
             );
             const legal = await axios.get(
-                "http://45.182.37.13:1337/legales"
+                "https://www2.flow.pe/legales"
             );
             this.contenido_slider = response.data.BannerPrincipal.Banner;
             this.contenido_cards = response.data.CardsInformacion.Cards;

@@ -17,30 +17,7 @@ const routes = [
       title: "Informacion de Abonados | Flow",
     },
   },
-  {
-    path: "/portabilidad-numerica",
-    name: "Portabilidad Numerica",
-    component: () => import("../views/legal/PortabilidadNumerica.vue"),
-    meta: {
-      title: "Portabilidad Numerica | Flow",
-    },
-  },
-  {
-    path: "/indicadores-de-calidad",
-    name: "Indicadores de Calidad",
-    component: () => import("../views/legal/IndicadoresCalidad.vue"),
-    meta: {
-      title: "Indicadores de Calidad | Flow",
-    },
-  },
-  {
-    path: "/red-casos-de-emergencia",
-    name: "Uso de la Red en Caso de Emergencia",
-    component: () => import("../views/legal/RedCasosEmergencia.vue"),
-    meta: {
-      title: "Uso de Red en Casos de Emergencia | Flow",
-    },
-  },
+
   {
     path: "/neutralidad-de-red",
     name: "Neutralidad de la Red",
@@ -49,22 +26,7 @@ const routes = [
       title: "Neutralidad de la Red | Flow",
     },
   },
-  {
-    path: "/proteccion-datos",
-    name: "Proteccion Datos",
-    component: () => import("../views/legal/ProteccionDatos.vue"),
-    meta: {
-      title: "Ley de Proteccion de Datos | Flow",
-    },
-  },
-  {
-    path: "/terminos-y-condiciones",
-    name: "Terminos y Condiciones",
-    component: () => import("../views/legal/TerminosCondiciones.vue"),
-    meta: {
-      title: "Terminos y Condiciones | Flow",
-    },
-  },
+
 ];
 
 const router = createRouter({

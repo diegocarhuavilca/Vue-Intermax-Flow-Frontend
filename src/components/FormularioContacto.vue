@@ -162,7 +162,7 @@ export default {
             };
 
             axios
-                .post("http://45.182.37.13:1337/contactos", data)
+                .post("https://www2.flow.pe/contactos", data)
                 .then(() => {
                     this.enviado = true;
                     (this.nombre = ""),

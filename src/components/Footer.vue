@@ -81,7 +81,7 @@
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                href="http://45.182.37.13:1337/uploads/Portabilidad_numerica_2_2fef46d1ad.pdf"
+                href="https://www2.flow.pe/uploads/Portabilidad_numerica_2_2fef46d1ad.pdf"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
@@ -93,7 +93,7 @@
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                href="http://45.182.37.13:1337/uploads/USO_DE_LA_RED_EN_CASO_DE_EMERGENCIA_2_412487978b.pdf"
+                href="https://www2.flow.pe/uploads/USO_DE_LA_RED_EN_CASO_DE_EMERGENCIA_2_412487978b.pdf"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
@@ -117,7 +117,7 @@
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                href="http://45.182.37.13:1337/uploads/POLITICA_DE_PROTECCION_DE_DATOS_Y_PRIVACIDAD_DE_INTERMAX_2_336e1b8e85.pdf"
+                href="https://www2.flow.pe/uploads/POLITICA_DE_PROTECCION_DE_DATOS_Y_PRIVACIDAD_DE_INTERMAX_2_336e1b8e85.pdf"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
@@ -129,7 +129,7 @@
               style="display: inline-block; width: 100%; cursor:pointer"
             >
               <a
-                href="http://45.182.37.13:1337/uploads/TERMINOS_Y_CONDICIONES_DE_LA_WEB_2_8278e572b7.pdf"
+                href="https://www2.flow.pe/uploads/TERMINOS_Y_CONDICIONES_DE_LA_WEB_2_8278e572b7.pdf"
                 class="text-white"
                 style="text-decoration: none"
                 target="_blank"
