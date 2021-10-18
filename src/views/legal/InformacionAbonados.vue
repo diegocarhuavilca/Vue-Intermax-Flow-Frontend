@@ -1,6 +1,4 @@
 <template>
-    <Navbar />
-
     <div class="container px-5" style="color:white; margin-top:1rem;margin-bottom:10rem;">
         <h1>{{ contenido.titulo }}</h1>
 
@@ -55,17 +53,11 @@
             d="M-5.24,114.41l-0.14,14.68h1250.04V15.88C850.21,212.59,387.66-94.03-5.24,114.41z"
         />
     </svg>
-    <Footer />
 </template>
 
 <script>
-import Navbar from "@/components/Navbar2.vue";
-import Footer from "@/components/Footer.vue";
 export default {
-    components: {
-        Navbar,
-        Footer,
-    },
+    components: {},
 
     data: function () {
         return {
